@@ -20,7 +20,7 @@ dependencies = [
     { name = "langchain" },
     { name = "langchain-community" },
     { name = "langchain-experimental" },
-    { name = "langchain-google-community" },
+    { name = "langchain-google-community", extra = ["places"] },
     { name = "langchain-groq" },
     { name = "langchain-openai" },
     { name = "langchain-tavily" },
@@ -39,7 +39,7 @@ requires-dist = [
     { name = "langchain", specifier = ">=1.1.2" },
     { name = "langchain-community", specifier = ">=0.4.1" },
     { name = "langchain-experimental", specifier = ">=0.4.0" },
-    { name = "langchain-google-community", specifier = ">=3.0.2" },
+    { name = "langchain-google-community", extras = ["places"], specifier = ">=3.0.2" },
     { name = "langchain-groq", specifier = ">=1.1.0" },
     { name = "langchain-openai", specifier = ">=1.1.1" },
     { name = "langchain-tavily", specifier = ">=0.2.13" },
@@ -852,6 +852,15 @@ wheels = [
 ]
 
 [[package]]
+name = "googlemaps"
+version = "4.10.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/fe/26/bca4d737a9acea25e94c19940a780bbf0be64a691f7caf3a68467d3a5838/googlemaps-4.10.0.tar.gz", hash = "sha256:3055fcbb1aa262a9159b589b5e6af762b10e80634ae11c59495bd44867e47d88", size = 33056, upload-time = "2023-01-26T16:45:02.501Z" }
+
+[[package]]
 name = "greenlet"
 version = "3.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1458,6 +1467,11 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/2a/ac/6de073177565c5a7b19e74a790b6d34462599cfa8db504acb94b20ecdf4d/langchain_google_community-3.0.2.tar.gz", hash = "sha256:b3e299f2e07ba5fa2719d1f3d5933a7ea09834a37e53fbd148d687c9695c8515", size = 311535, upload-time = "2025-12-08T14:41:53.179Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/75/be/be67edb096ff2328a9e87d9817e5bcc372c7647a613c4c9f28c33d984af4/langchain_google_community-3.0.2-py3-none-any.whl", hash = "sha256:143d1dd0419ad020f84aa57c53e06db8558cb6eaaf899838236709f7baa4408a", size = 133054, upload-time = "2025-12-08T14:41:52.072Z" },
+]
+
+[package.optional-dependencies]
+places = [
+    { name = "googlemaps" },
 ]
 
 [[package]]
